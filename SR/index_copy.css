@@ -1,0 +1,20 @@
+h1,h2,h3,h4,h5,h6{
+    color: blueviolet;
+    font-family:"Monotype",cursive;
+}
+.element1{
+    font-size: 18pt;
+ color: red;
+ font-family: 'Times New Roman', Times, serif;
+}
+.element2{
+    font-size: 20pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: yellow;
+}
+.element3{
+    font-size: 22pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: green;
+}
+div h3 { color: yellow; }

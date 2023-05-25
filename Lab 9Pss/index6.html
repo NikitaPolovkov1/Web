@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Работа с датами</title>
+  </head>
+  <body>
+    <h1>Работа с датами</h1>
+    <label for="custom-date-input">Введите дату (гггг-мм-дд):</label>
+    <input type="text" id="custom-date-input">
+    <button onclick="showDate()">Показать дату и день недели</button>
+    <p>Введенная дата: <span id="custom-date-output"></span></p>
+    <p>День недели: <span id="day-of-week"></span></p>
+
+    <script>
+      function showDate() {
+        var inputDateStr = document.getElementById("custom-date-input").value;
+        var inputDate = new Date(inputDateStr);
+        document.getElementById("custom-date-output").innerHTML = inputDate.toLocaleDateString();
+
+        var daysOfWeek = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+        var dayOfWeek = daysOfWeek[inputDate.getDay()];
+        document.getElementById("day-of-week").innerHTML = dayOfWeek;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"24 ИТК"</title>
+</head>
+<body>
+    <style>
+        body{
+            font-size: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        span{
+            margin-top: 5%;
+        }
+    </style>
+    <span id="data1"></span>
+    <span id="data2"></span>
+    <span id="data3"></span><br>
+    <input type="text" id="birthdayInput" placeholder="Введите дату рождения в формате 'гггг-мм-дд'" />
+    <p id="daysUntilBirthday"></p>
+    <script>
+    var date = new Date();
+    var day = date.getDay();
+    var days = ["воскресенье", "понедельник", "вторник","среда", "четверг", "пятница", "суббота"];
+    document.getElementById("data1").textContent = "1 задание - "+days[day]+" | ";
+    var date2 = new Date(2015, 1, 7, 23, 59, 59);
+    var day2=date2.getDay();
+    document.getElementById("data2").textContent = "2 задание - "+days[day2]+" | ";
+    now=new Date();
+    date2=new Date(2015, 1, 7);
+    var diff = now.getTime() - date2.getTime();
+    document.getElementById("data3").textContent = "3 задание - "+diff+" | ";
+    function calculateDaysUntilBirthday() {
+            var birthdayInput = document.getElementById("birthdayInput");
+            var birthdayString = birthdayInput.value;
+
+            var birthdayDate = new Date(Date.parse(birthdayString));
+            
+            // Проверяем, что дата рождения введена в правильном формате
+            if (isNaN(birthdayDate)) {
+                document.getElementById("daysUntilBirthday").innerText = "Пожалуйста, введите дату в формате 'гггг-мм-дд'";
+                return;
+            }
+            var currentDate = new Date();
+            // Рассчитываем количество миллисекунд до дня рождения
+            var timeDifference = birthdayDate - currentDate;
+            // Если день рождения уже прошел в текущем году, добавляем год к дате рождения
+            if (timeDifference < 0) {
+                birthdayDate.setFullYear(currentDate.getFullYear() + 1);
+                timeDifference = birthdayDate - currentDate;
+            }
+
+            // Рассчитываем количество дней до дня рождения
+            var daysUntilBirthday = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+            // Выводим количество оставшихся дней до дня рождения
+            document.getElementById("daysUntilBirthday").innerText = "До вашего дня рождения осталось: " + daysUntilBirthday + " дней";
+        }
+    
+        var birthdayInput = document.getElementById("birthdayInput");
+        birthdayInput.addEventListener("blur", calculateDaysUntilBirthday);
+
+        function getZodiacSign(day, month) {
+    // Определяем знак зодиака на основе дня и месяца
+    if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+        return "Водолей";
+    } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+        return "Рыбы";
+    } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+        return "Овен";
+    } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+        return "Телец";
+    } else if ((month === 5 && day >= 21) || (month === 6 && day <= 20)) {
+        return "Близнецы";
+    } else if ((month === 6 && day >= 21) || (month === 7 && day <= 22)) {
+        return "Рак";
+    } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        return "Лев";
+    } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        return "Дева";
+    } else if ((month === 9 && day >= 23) || (month === 10 && day <= 22)) {
+        return "Весы";
+    } else if ((month === 10 && day >= 23) || (month === 11 && day <= 21)) {
+        return "Скорпион";
+    } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        return "Стрелец";
+    } else if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+        return "Козерог";
+    }
+}
+
+// Получаем дату от пользователя
+var day = parseInt(prompt("Введите день рождения:"));
+var month = parseInt(prompt("Введите месяц рождения (в числовом формате):"));
+
+// Вызываем функцию для определения знака зодиака
+var zodiacSign = getZodiacSign(day, month);
+
+// Выводим результат
+if (zodiacSign) {
+    console.log("Ваш знак зодиака: " + zodiacSign);
+} else {
+    console.log("Некорректная дата рождения.");
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"23 ИТК"</title>
+</head>
+<body>
+    <div id="first">
+        <h2>
+            Заголовок, не поменяется.
+            </h2>
+            <p>Абзац, поменяется.</p>
+            <p>Абзац, поменяется.</p>
+            <p>Абзац, поменяется.</p>
+    </div>
+    <button onclick=NewTextInP()>Нажмите что бы я поменял текст</button>
+    <div>
+        <h2 class="zzz">
+            Заголовок, с классом zzz.
+            </h2>
+            <p class="zzz">Абзац, с классом zzz.</p>
+            <p class="zzz">Абзац, с классом zzz.</p>
+            <p>Просто абзац,не поменяется.</p>
+    </div>
+    <button onclick=NewTextInClass()>Нажмите что бы я поменял текст</button>
+    <div id="calc" style="margin-top: 3%;">
+        <input type="text">
+        <span>+</span>
+        <input type="text">
+        <span>=</span>
+        <span id="answer">?</span>
+    </div>
+    <button onclick=Calc()>Нажмите что бы сложить</button>
+    <div id="ref" style="margin-top: 10%;">
+        <a href="#">ссылка 1</a><br>
+        <a href="#">ссылка 2</a><br>
+        <a href="#">ссылка 3</a><br>
+    </div>
+    <button onclick=Reference()>Нажмите на меня!</button>
+    <script>
+        function NewTextInP(){
+            var elem= document.getElementById("first").getElementsByTagName('p');
+            for(var i=0;i<elem.length;i++)
+            {
+               elem[i].innerHTML=i+1;
+            }
+        }
+        function NewTextInClass(){
+            var elem=document.getElementsByClassName('zzz');
+            for(var i=0;i<elem.length;i++)
+            {
+               elem[i].innerHTML=i+1;
+            }
+        }
+        function Calc(){
+            var elem = document.getElementById("calc").getElementsByTagName("input");
+            var a=elem[0].value
+            var b=elem[1].value
+            document.getElementById("answer").textContent = Number(a)+Number(b);
+        }
+        function Reference(){
+            var elem = document.getElementById("ref").getElementsByTagName("a");
+            for(var i=0;i<elem.length;i++)
+            {
+                elem[i].href = "https://metanit.com/sharp/aspnetmvc/11.5.php"
+            }
+        }
+    </script>
+</body>
+</html>

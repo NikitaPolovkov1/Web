@@ -1,0 +1,101 @@
+header,
+footer {
+  text-align: center;
+  font-size: 20px;
+  height: 5vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.content {
+
+  float: left;
+  /* Требования */
+  width: 60%;
+  background-color: bisque;
+  padding: 10px;
+  margin: 10px;
+  height: 80vh;
+  border: 1px solid black;
+
+  background-image: url(./backgroud.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+.menu {
+  float: left;
+  background-color: aliceblue;
+  border: 1px solid black;
+  text-align: center;
+  height: 80vh;
+  margin: 10px;
+  padding: 10px;
+  width: 33%;
+}
+
+.link {
+  /* Требования */
+  font-size: 30px;
+  color: rgba(87, 87, 87, 0.409);
+  text-decoration: none;
+  margin: 20px;
+}
+
+.photo {
+  /* Требования */
+  border: 1px solid cornflowerblue;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  height: auto;
+  vertical-align: top;
+}
+
+label {
+  /* Требования */
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px;
+}
+
+p {
+  /* Требования */
+  margin: 20px;
+  content: normal;
+  background-color: azure;
+}
+
+.intro {
+  display: flex;
+}
+
+
+table {
+  z-index: 5;
+  background-color: aliceblue;
+
+}
+
+tr {
+  text-align: center;
+  border-color: blue;
+}
+
+td {
+  height: 30px;
+}
+
+ul {
+  z-index: 5;
+  color: #FFF;
+}
+
+li {
+  list-style: circle;
+  list-style-position: inside;
+  list-style-type: circle;
+  list-style-image: url(./imgonline-com-ua-Resize-T4ev6l1nPEZ.jpg);
+  color: #FFF;
+}

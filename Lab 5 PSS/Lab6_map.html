@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Карта ссылок</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <a href="./lab6_layer.html">главная</a>
+  <a href="./lab6_layer.html">эта</a>
+  <a href="./ins.html">вторая</a>
+  <div class="classMA">
+
+    <div class="triangle" id="1">
+
+    </div>
+
+
+    <div class="triangle2" id="2">
+
+    </div>
+
+    <div class="ellipse">
+
+    </div>
+  </div>
+  <script>
+    const myButton = document.getElementById("1"); // получаем элемент кнопки
+    const myButton2 = document.getElementById("2");
+    const myButton3 = document.getElementById("3");
+    myButton.addEventListener("click", function () {
+      window.location.href = "./ins.html"; // перенаправляем на другую страницу
+    });
+    myButton2.addEventListener("click", function () {
+      window.location.href = "./lab6_layer.html"; // перенаправляем на другую страницу
+    });
+    myButton3.addEventListener("click", function () {
+      window.location.href = "./ins.html"; // перенаправляем на другую страницу
+    });
+  </script>
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половков Никита Сергеевич Т-096 Вариант 3</title>
+</head>
+
+<body>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        button {
+            height: 40px;
+            background-color: bisque;
+            margin: 0 20px;
+            border: 1px solid black;
+        }
+    </style>
+
+    <button onclick="CountSeconds('час')">Количество секунд в часе</button>
+    <button onclick="CountSeconds('сутки')">Количество секунд в сутках</button>
+    <button onclick="CountSeconds('месяц')">Количество секунд в месяце</button>
+
+
+    <script>
+
+        const CountSeconds = (type) => {
+            if (type === "час") {
+                alert("Количество секунд в часе: " + (60 * 60));
+            }
+            else if (type === "сутки") {
+                alert("Количество секунд в сутках: " + (60 * 60 * 24));
+            }
+            else if (type === "месяц") {
+                alert("Количество секунд в месяце: " + (60 * 60 * 24 * 30));
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

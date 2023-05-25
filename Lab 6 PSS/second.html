@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #date{
+            text-decoration: dashed;
+        }
+        #line{
+            height: 3px;
+            width: 100%; background-color:black; margin-top:15px ;
+            margin-bottom: 15px;
+            
+        }
+        fieldset{
+            border-color: black;
+            border-radius: 15px;
+            width: 600px;
+        }
+        #buttons{
+            margin-top: 4%;
+            margin-left: 5px;
+        }
+    </style>
+    <div class="all" style="margin: 0 auto;">
+        <marquee behavior="" direction="" style="color:blueviolet;font-size: 40px;">Анкета</marquee>
+        <div id="line"></div>
+        <fieldset style="line-height: 2;">
+            <legend>ФИО</legend>
+            <div>
+            <label for="name" >Имя:</label>
+            <input type="text"id="name" style="margin-left: 33px; width: 500px;">
+            </div>
+            <div>
+            <label for="name" >Фамилия:</label>
+            <input type="text"id="name"style="width: 500px;">
+            </div>
+        </fieldset>
+        <fieldset style="line-height: 2;">
+            <legend>Дата рождения</legend>
+            <label for="name"><b>Число:</b></label>
+            <input type="text"id="name" style="width: 120px;>
+            <label for="name" ><b>Месяц:</b></label>
+            <select id="country">
+                <option>Январь</option>
+                <option>Февраль</option>
+                <option>Март</option>
+                <option>Апрель</option>
+                <option>Май</option>
+                <option>Июнь</option>
+                <option>Июль</option>
+                <option>Август</option>
+                <option>Сентябрь</option>
+                <option>Октябрь</option>
+                <option>Ноябрь</option>
+                <option>Декабрь</option>
+            </select>
+            <label for="name" ><b>Год:</b></label>
+            <input type="text"id="name" style="width: 80px;">
+        </fieldset>
+        <fieldset>
+            <legend>Пол</legend>
+            <input type="radio" name="ch">Муж<input type="radio" name="ch">Жен
+        </fieldset>
+        <div id="buttons">
+        <input type="submit" value="OK" onclick="submitForm(); return false;"></td>
+                    <td><input type="reset" value="Очистить" onclick="resetForm();">
+    
+        </div>
+        </div>
+<script src="./second_function.js"></script>
+</body>
+</html>

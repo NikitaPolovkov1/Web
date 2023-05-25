@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+<script>
+    var msg = "Бегущая строка ";
+    var ch = true;
+    var ch2 = true;
+    function get_time() {
+        const now = new Date();
+        const hours = String(now.getHours()).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        return `${hours}:${minutes}:${seconds}`;
+    }
+    function scrollMsg() {
+        document.scrollerForm.Msg.value = msg;
+        msg = msg.substring(1, msg.length) +
+            msg.substring(0, 1);
+        setTimeout("scrollMsg()", 100);
+    }
+
+    function updateClock() {
+        document.timeForm.Msg2.value = get_time();
+        document.timeForm2.Msg3.value = get_time();
+        setTimeout("updateClock()", 1000);
+    }
+
+    function updateClockStop() {
+        if (ch) { document.timeForm3.Msg4.value = get_time(); setTimeout("updateClockStop()", 1000); }
+        else { document.timeForm3.Msg4.value = get_time(); }
+    }
+    function updateClockStop2() {
+        if (ch2) { document.timeForm4.Msg5.value = get_time(); setTimeout("updateClockStop2()", 1000); }
+        else { document.timeForm4.Msg5.value = get_time(); }
+    }
+    function snd() {
+        let btn = document.getElementById("btn");
+        if (btn.textContent === "Старт") { ch2 = true; updateClockStop2(); btn.textContent = "Пауза"; }
+        else { ch2 = false; btn.textContent = "Старт"; }
+    }
+    function stop() {
+        ch = false;
+    }
+    function start() {
+        ch = true;
+        updateClockStop();
+    }
+    function main() {
+        scrollMsg();
+        updateClock();
+    }
+</script>
+
+<body onload=main()>
+
+    <ol>
+        <FORM NAME="scrollerForm" class="mt-4" style="width: 400px;">
+            <INPUT class="form-control" TYPE="text" NAME="Msg" VALUE="" size=11 style="font-size: 30px;">
+        </FORM>
+    </ol>
+    <ol>
+        <form name="timeForm" style="width: 400px;">
+            <input class="form-control" id="clockInput" TYPE="text" NAME="Msg2" VALUE="" size=11
+                style="font-size: 30px;">
+        </form>
+    </ol>
+    <ol>
+        <form name="timeForm2" style="width: 400px;">
+            <input class="form-control" readonly id="clockInput2" TYPE="text" NAME="Msg3" VALUE="" size=11
+                style="font-size: 30px;">
+        </form>
+    </ol>
+    <ol>
+        <form name="timeForm3" style="width: 400px;">
+            <input class="form-control" readonly id="clockInput3" TYPE="text" NAME="Msg4" VALUE="" size=11
+                style="font-size: 30px;">
+        </form>
+        <button class="btn btn-outline-dark mt-4" onclick=start()>Старт</button>
+        <button class="btn btn-outline-dark mt-4" onclick=stop()>Стоп</button>
+    </ol>
+    <ol>
+        <form name="timeForm4" style="width: 400px;">
+            <input class="form-control" readonly id="clockInput4" TYPE="text" NAME="Msg5" VALUE="" size=11
+                style="font-size: 30px;">
+        </form>
+        <button class="btn btn-outline-dark mt-3" id="btn" onclick=snd()>Старт</button>
+    </ol>
+
+</body>
+
+</html>

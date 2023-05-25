@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .menu {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        button {
+            margin: 20px 0px;
+        }
+    </style>
+
+    <div id="text">Нажми на кнопку и я исчезну</div>
+    <button onclick={deleteText()}>Нажми</button>
+    <br>
+    <button id="btn" onclick={DeleteButton()}>Это другая кнопка нажми и я исчезну</button>
+    <br>
+    <button href="" onclick="ShowMenu()">Нажми и появится меню</button>
+    <menu id="menu" class="menu">
+        <div class="div">
+            <a href="">Ай</a>
+        </div>
+        <div class="div">
+            <a href="">Ой</a>
+        </div>
+        <div class="div">
+            <a href="">Ай ай ай</a>
+        </div>
+        <div class="div">
+            <a href="">Ой ой ой</a>
+        </div>
+    </menu>
+
+
+    <script>
+        const deleteText = () => {
+            var tex = document.getElementById("text");
+            tex.style.display = "none";
+        }
+
+        const DeleteButton = () => {
+            var btn = document.getElementById("btn");
+            btn.style.display = "none";
+        }
+
+        const ShowMenu = () => {
+            var menu = document.getElementById("menu");
+            menu.classList.toggle("active");
+        }
+        ///14 ЛР
+        //1 задание
+        let a = 1, b = 1;
+        let c = ++a; // ?
+
+        4
+
+        let d = b++; // ?
+        console.log(c);//2
+        console.log(d)//1
+
+        // 2 задание
+        a = 2;
+        let x = 1 + (a *= 2);
+        console.log(x);//5
+        //3 задание
+        "" + 1 + 0 = "10" // строка "1" склеивается с пустой строкой "" и затем со значением 0, получаем строку "10"
+        "" - 1 + 0 = -1 // пустая строка "" преобразуется в число 0, выполняется вычитание 1, получаем -1
+        true + false = 1 // true преобразуется в число 1, а false в 0, их сумма равна 1
+        6 / "3" = 2 // строка "3" преобразуется в число 3, выполняется деление 6 на 3, получаем 2
+        "2" * "3" = 6 // строки "2" и "3" преобразуются в числа 2 и 3 соответственно, выполняется умножение 2 на 3, получаем 6
+        4 + 5 + "px" = "9px" // сначала выполняется сложение чисел 4 и 5, получаем 9, затем происходит склеивание строки "px" с числом 9, получаем строку "9px"
+        "$" + 4 + 5 = "$45" // символ "$" склеивается с числом 4, затем с числом 5, получаем строку "$45"
+        "4" - 2 = 2 // строка "4" преобразуется в число 4, выполняется вычитание 2, получаем 2
+        "4px" - 2 = NaN // строка "4px" не может быть преобразована в число, поэтому результат выражения неопределен (NaN)
+        7 / 0 = Infinity // деление числа на 0 дает бесконечность (Infinity)
+        " -9 " + 5 = " -9 5" // строка " -9 " склеивается с числом 5, получаем строку " -9 5"
+        " -9 " - 5 = -14 // строка " -9 " преобразуется в число -9, выполняется вычитание 5, получаем -14
+        null + 1 = 1 // null преобразуется в число 0, затем происходит сложение 0 и 1, получаем 1
+        undefined + 1 = NaN // undefined не может быть преобразован в число, поэтому результат выражения неопределен (NaN)
+        "\t\n" - 2 = -2 // строка "\t\n" преобразуется в число 0, выполняется вычитание 2, получаем -2. Обратите внимание, что эта строка содержит символы табуляции и перевода строки, которые игнорируются при преобразовании в число.
+
+        //ЛР 15
+        <script>
+        var max = 5
+        console.log("Первое");
+        try {
+        for(var i=0; i<Number.POSITIVE_INFINITY; i++) {
+            if (i>max) throw new Error("failed to reach the stars")
+            else console.log(i);
+            }
+            } catch(e) { }
+            console.log("Второе");
+            var a=5, b=6, str = "Строка";
+            a = 1
+            function go() {
+            a = 6
+            console.log("a = "+a);
+        }
+
+            console.log("Третье");
+            function cmp(a,b) {
+            if (a>b) {
+            res = 1
+            } else if (a<b) {
+            res = -1 } 
+            else {
+            var res = 0 }
+            return res}
+            go()
+            alert(a) // =&gt; 6
+    </script>
+
+
+    </script>
+</body>
+
+</html>

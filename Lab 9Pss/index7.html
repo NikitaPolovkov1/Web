@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var currentDate = new Date();
+        
+        var currentDay = currentDate.getDate();
+        var currentMonth = currentDate.getMonth();
+        var currentYear = currentDate.getFullYear();
+        
+        var nextWeekDate = new Date();
+        nextWeekDate.setDate(currentDay + 7);
+        
+        var nextWeekDay = nextWeekDate.getDate();
+        var nextWeekMonth = nextWeekDate.getMonth();
+        var nextWeekYear = nextWeekDate.getFullYear();
+        
+     
+        document.write("Через неделю будет: " + nextWeekDay + "." + (nextWeekMonth + 1) + "." + nextWeekYear);
+        </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li><button onclick="alert('привет!')">Нажми на меня</button></li>
+        <li><button onclick="Change()">Нажми на меня</button> <input id="input" type="text"></li>
+        <li><button onclick="alert(document.getElementById('input1').value)">Нажми на меня</button> <input id="input1"
+                type="text"></li>
+        <li><button
+                onclick="alert(document.getElementById('input2').value * document.getElementById('input2').value)">Нажми
+                на меня</button>
+            <input id="input2" type="number">
+        </li>
+        <li><button onclick="changeInputs()">Нажми на меня</button>
+            <input id="input3" type="text">
+            <input id="input4" type="text">
+        </li>
+        <li>
+            <input value="Нажми на меня" type="button" id="inp_btn"
+                onClick="document.getElementById('inp_btn').value = 'Новый текст'">
+        </li>
+        <li>
+            <button onclick="document.getElementById('input_color').style.color = 'orange'">Нажми на меня</button>
+            <input type="text" id="input_color">
+        </li>
+        <li>
+            <button onclick="document.getElementById('input_otbl').disabled = true">Заблокировать</button>
+            <button onclick="document.getElementById('input_otbl').disabled = false">Разблокировать</button>
+            <input type="text" id="input_otbl">
+        </li>
+        <li>
+            Кнопка считает количество нажатий по ней
+            <br>
+            <input type="button" id="Click_btn" style="width: 400px;"
+                onclick="document.getElementById('Click_btn').value = Number(document.getElementById('Click_btn').value) + 1"
+                value="0">
+        </li>
+        <li>
+            <input type="text" id="chisl">
+            <br>
+            <input type="text" id="kvadr">
+            <br>
+            <button onclick="KvadrRes()">Нажми на меня</button>
+        </li>
+
+    </ul>
+
+
+
+    <script>
+        function Change() {
+            var inp = document.getElementById("input").value;
+            document.getElementById("input").value = "";
+            for (let i = 0; i < inp.length; i++) {
+                document.getElementById("input").value += "!";
+            }
+        }
+
+        const changeInputs = () => {
+            [document.getElementById("input3").value, document.getElementById("input4").value] = [document.getElementById("input4").value, document.getElementById("input3").value];
+        }
+
+        const KvadrRes = () => {
+            if (isNaN(document.getElementById("chisl").value)) {
+                alert("Неверно введены данные");
+                return;
+            }
+            var a = Number(document.getElementById("chisl").value);
+            document.getElementById("kvadr").value = a * a;
+        }
+    </script>
+</body>
+
+</html>

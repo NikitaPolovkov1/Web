@@ -1,0 +1,38 @@
+#secondp {
+    font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono", "Droid Sans Mono", monospace, monospace;
+    color: red;
+    font-size: 25px;
+  }
+  h3 {
+    text-align: center;
+  }
+  .container-image
+  {
+    text-align: center;
+  }
+  body{
+    background-color: beige;
+  }
+  .text{
+    color: coral;
+  }
+  * {
+    background-color: #BDB76B;
+  }
+
+
+#spann{
+  text-decoration: line-through;
+}
+div h3{
+  color: yellow;
+}
+div > h2{
+  color: rgb(0, 250, 154);
+}
+
+table td,tr,a
+{
+  color:rgb(31, 175, 63);
+  background-color: blueviolet;
+}

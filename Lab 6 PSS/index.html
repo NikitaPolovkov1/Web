@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div class="forms" style="width:400px;height: 300px;margin-left: auto;margin-right: auto">
+        <h1 style="text-align: center;color: red;">Форма регистрации</h1>
+        <form action="POST" name="registration" style="line-height: 1.2;text-align: end;">
+            <table>
+                <tr>
+                    <td><label for="name">Имя:</label></td>
+                    <td><input type="text" id="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="" id="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Пароль:</label></td>
+                    <td><input type="password" id="password" name="password"></td>
+                </tr>
+                <tr>
+                    <td><label for="password2">Подтвердите пароль:</label></td>
+                    <td><input type="password" id="password2" name="password2"></td>
+                </tr>
+                <tr>
+                    <td><label for="sex">Пол:</label></td>
+                    <td id="sex"><input type="radio" name="ch">Мужской<input type="radio" name="ch">Женский</td>
+                </tr>
+                <tr>
+                    <td><label for="country">Увлечения:</label></td>
+                    <td><select id="country">
+                            <option>компьютеры</option>
+                            <option>спорт</option>
+                            <option>игры</option>
+                            <option>животные</option>
+                            <option>цветы</option>
+                            <option>живопись</option>
+                            <option>архитектура</option>
+                            <option>бизнес-аналитика</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label for="area">Ваши пожелания:</label></td>
+                    <td id="area"><textarea style="resize: none"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="reg">C условиями регистрации ознакомлен</label></td>
+                    <td id="reg"> <input type="checkbox" checked style="display: flex;"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Отправить" onclick="submitForm(); return false;"></td>
+                    <td><input type="reset" value="Очистить" onclick="resetForm();"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="./functions.js"></script>
+</body>
+
+</html>

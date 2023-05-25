@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Половков Никита Сергеевич Т-096 Вариант 3</title>
+</head>
+
+<body>
+    <label for="">Логин</label>
+    <br>
+    <input id="login" type="text">
+    <br>
+    <label for="">Пароль</label>
+    <br>
+    <input id="password" type="password">
+    <br>
+    <button onclick="CheckData()">Войти</button>
+
+    <script>
+        const $login = "nikita123";
+        const $pass = "123456789";
+        const CheckData = () => {
+            var log = document.getElementById("login").value;
+            var pass = document.getElementById("password").value;
+            if (log === $login && pass === $pass) {
+                alert("Доступ разрешен!");
+            }
+            else {
+                alert("Доступ запрещен!");
+            }
+        }
+    </script>
+</body>
+
+</html>

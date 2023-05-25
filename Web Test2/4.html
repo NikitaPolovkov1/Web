@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <style>
+        .obj {
+            margin-top: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            transition: .54s;
+        }
+    </style>
+    <div class="obj" id="obj" style="top: 20px;"></div>
+    <div class="obj" id="obj1" style="top: 50px;"></div>
+    <div class="obj" id="obj2" style="margin-top: 80px;"></div>
+    <div class="obj" id="obj3" style="margin-top: 110px;"></div>
+    <button onclick="back()">назад</button>
+    <button onclick="next()">вперёд</button>
+    <script>
+        var i = 0;
+        const back = () => {
+            var obj = document.getElementById("obj");
+            var obj1 = document.getElementById("obj1");
+            var obj2 = document.getElementById("obj2");
+            var obj3 = document.getElementById("obj3");
+            i -= 500;
+            obj.style.left = i + 20 + "px";
+            obj1.style.left = i + 40 + "px";
+            obj2.style.left = i + 60 + "px";
+            obj3.style.left = i + 70 + "px";
+        }
+        const next = () => {
+            var obj = document.getElementById("obj");
+            var obj1 = document.getElementById("obj1");
+            var obj2 = document.getElementById("obj2");
+            var obj3 = document.getElementById("obj3");
+            i += 500;
+            obj.style.left = i + 20 + "px";
+            obj1.style.left = i + 40 + "px";
+            obj2.style.left = i + 60 + "px";
+            obj3.style.left = i + 70 + "px";
+        }
+    </script>
+</body>
+
+
+</html>
